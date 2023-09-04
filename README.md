@@ -502,6 +502,17 @@ function Example() {
 
 export default Example;
 
+# Important Step to follow when we copy Generic HTML into React JSX
+
+1. class should change to className
+2. href="#" should change to href="/"
+3. all tag should be closed tag for example <hr><br>  should be write like <br/>and <hr/> respectively
+and many more
+
+# why JSX used className for CSS class
+to remove comflict between Javascript class and HTML Css class
+
+
 
 
 
