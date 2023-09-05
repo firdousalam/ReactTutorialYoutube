@@ -1,22 +1,41 @@
-import { useState } from "react"
-import { Button } from "react-bootstrap";
-import Career from "../Career/Career";
+import { useState,React,useEffect } from "react"
+import axios from "axios";
+import Card from 'react-bootstrap/Card';
+const baseURL = "https://jsonplaceholder.typicode.com/posts";
+
 function Dashboard() {
-    // Declare a new state variable, which we'll call "count"
-        const [count, setCount] = useState("");
-        const updateCount = ()=>{
-            setCount("Data Got Update In Parent ")
-        }
+    /*
+        To perform this request when the component mounts, you use the useEffect hook. This involves importing Axios, using the .get() method to make a GET request to your endpoint, and using a .then() callback to get back all of the response data.
+        The response is returned as an object. The data (which is in this case a post with id, title, and body properties) is put in a piece of state called post which is displayed in the component.
+    */
+    const [post, setPost] = useState(null);
+
+    useEffect(() => {
+      axios.get(baseURL).then((response) => {
+        setPost(response.data);
+      });
+    }, []);
+  
+    if (!post) return null;
+
+    const postList= post.map((eachPost)=>
+        <Card>
+            <Card.Body>
+                <Card.Title>{eachPost.id} : {eachPost.title}</Card.Title>
+                <Card.Text>
+                    {eachPost.body}
+                </Card.Text>
+            </Card.Body>
+        </Card>
+    )
+
     return (
         <>
            <div className="container-fluid">
                 <h1> Dashboard </h1>
-                <Career />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>You clicked {count} times</p>
-                <Button onClick={() => updateCount()}>
-                    Click me
-                </Button>
+                <div>
+                    {postList}
+                </div>
             </div>
         </>
     )
