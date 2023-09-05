@@ -22,6 +22,9 @@ function Menu() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/contactUs">Contact Us</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/loginSignup">Login Signup</Link>
+                        </li>
                         
                     </ul>
                     <form className="d-flex" role="search">
