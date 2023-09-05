@@ -55,11 +55,11 @@ function LoginSignup() {
         // Username not found
         setErrorMessages({ name: "uname", message: errors.uname });
       }
-
-      const config = {     
+    /*
+    const config = {     
         headers: { 'content-type': 'multipart/form-data' }
     }
-    /*
+    
      let url = "vvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
     axios.post(url, data, config)
         .then(response => {
