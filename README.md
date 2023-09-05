@@ -506,12 +506,24 @@ export default Example;
 
 1. class should change to className
 2. href="#" should change to href="/"
-3. all tag should be closed tag for example <hr><br>  should be write like <br/>and <hr/> respectively
+3. all tag should be closed tag for example "<HR><BR>"  should be write like <BR/>and <HR/> respectively
 and many more
 
 # why JSX used className for CSS class
 to remove comflict between Javascript class and HTML Css class
 
+# Built-in React Hooks
+Hooks let you use different React features from your components. You can either use the built-in Hooks or combine them to build your own. This page lists all built-in Hooks in React.
+
+# State Hooks 
+State lets a component “remember” information like user input. For example, a form component can use state to store the input value, while an image gallery component can use state to store the selected image index.
+
+To add state to a component, use one of these Hooks:
+
+useState declares a state variable that you can update directly.
+useReducer declares a state variable with the update logic inside a reducer function.
+function ImageGallery() {
+  const [index, setIndex] = useState(0);
 
 
 
