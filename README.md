@@ -509,7 +509,7 @@ export default Example;
 2. href="#" should change to href="/"
 3. all tag should be closed tag for example "<HR><BR>"  should be write like <BR/>and <HR/> respectively
 and many more
-<input type="" > should be <input type"" />
+'<input type="" >' input type should have cloas tage  <input type"" />
 
 # why JSX used className for CSS class
 to remove comflict between Javascript class and HTML Css class
