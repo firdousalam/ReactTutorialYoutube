@@ -93,6 +93,18 @@ version 18
 React component is the primary building block of the React application. It uses React elements and JSX to design its user interface. 
 React component is basically a JavaScript class or pure JavaScript function
 
+Example 
+```html
+export default function App(){
+  return (
+    <> 
+      <div> Hello World
+    </>
+  )
+}
+
+```
+
 # what is JSX
 
 JSX stands for JavaScript XML.
@@ -354,7 +366,9 @@ import message from "./message.js";
 ## Ternary Operator
 
 The ternary operator is a simplified conditional operator like if / else.
-Syntax: condition ? <expression if true> : <expression if false>
+Syntax: 
+```html
+condition ? <expression if true> : <expression if false>
 Here is an example using if / else:
 Before:
 if (authenticated) {
@@ -364,9 +378,10 @@ if (authenticated) {
 }
 With Ternary 
 authenticated ? renderApp() : renderLogin();
+```
 
 # JSX
-
+```html
 let x = "hello"
 <>
        
@@ -379,13 +394,15 @@ this will compile to
     <html>
         <body> hello</body>
     </html>
+```
+
 # React Router
 
 React Router enables "client side routing".
 
 ### example of Routing In React
 Client side routing is enabled by creating a Router and linking/submitting to pages with Link and <Form>:
-
+```html
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import {
@@ -414,7 +431,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
 );
-
+```
 # createBrowserRouter
 This is the recommended router for all React Router web projects. It uses the DOM History API to update the URL and manage the history stack.
 
@@ -468,7 +485,7 @@ import { Button } from 'react-bootstrap';
 
 # Browser globals
 We provide react-bootstrap.js and react-bootstrap.min.js bundles with all components exported on the window.ReactBootstrap object. These bundles are available on jsDelivr, as well as in the npm package.
-
+```html
 <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" crossorigin></script>
 
 <script
@@ -501,13 +518,17 @@ function Example() {
 }
 
 export default Example;
-
+```
 # Important Step to follow when we copy Generic HTML into React JSX
 
 1. class should change to className
 2. href="#" should change to href="/"
-3. all tag should be closed tag for example "<HR><BR>"  should be write like <BR/>and <HR/> respectively
-and many more
+3. all tag should be closed tag for example 
+```html
+<input type="" > should have cloas tage  <input type"" />
+<br> should be like <br />
+<hr> should be <hr/>
+```
 
 # why JSX used className for CSS class
 to remove comflict between Javascript class and HTML Css class
@@ -525,9 +546,429 @@ useReducer declares a state variable with the update logic inside a reducer func
 function ImageGallery() {
   const [index, setIndex] = useState(0);
 
+Hooks were added to React in version 16.8.
 
+Hooks allow function components to have access to state and other React features. Because of this, class components are generally no longer needed.
 
+Hooks allow us to "hook" into React features such as state and lifecycle methods.
 
+Example:Get your own React.js Server
+Here is an example of a Hook. Don't worry if it doesn't make sense. We will go into more detail in the next section.
+
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+```html
+function FavoriteColor() {
+  const [color, setColor] = useState("red");
+
+  return (
+    <>
+      <h1>My favorite color is {color}!</h1>
+      <button
+        type="button"
+        onClick={() => setColor("blue")}
+      >Blue</button>
+      <button
+        type="button"
+        onClick={() => setColor("red")}
+      >Red</button>
+      <button
+        type="button"
+        onClick={() => setColor("pink")}
+      >Pink</button>
+      <button
+        type="button"
+        onClick={() => setColor("green")}
+      >Green</button>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<FavoriteColor />);
+```
+
+ou must import Hooks from react.
+
+Here we are using the useState Hook to keep track of the application state.
+
+State generally refers to application data or properties that need to be tracked.
+
+# Hook Rules
+There are 3 rules for hooks:
+
+Hooks can only be called inside React function components.
+Hooks can only be called at the top level of a component.
+Hooks cannot be conditional
+
+# React useState Hook
+
+The React useState Hook allows us to track state in a function component.
+
+State generally refers to data or properties that need to be tracking in an application.
+
+Import useState
+To use the useState Hook, we first need to import it into our component.
+
+Example:Get your own React.js Server
+At the top of your component, import the useState Hook.
+
+Initialize useState
+We initialize our state by calling useState in our function component.
+
+useState accepts an initial state and returns two values:
+
+The current state.
+A function that updates the state.
+Example:
+Initialize state at the top of the function component.
+```html
+import { useState } from "react";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("");
+}
+```
+Notice that again, we are destructuring the returned values from useState.
+
+The first value, color, is our current state.
+
+The second value, setColor, is the function that is used to update our state.
+
+These names are variables that can be named anything you would like.
+
+Lastly, we set the initial state to an empty string: useState("")
+
+```html
+Example:
+Use the state variable in the rendered component.
+
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("red");
+
+  return <h1>My favorite color is {color}!</h1>
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<FavoriteColor />);
+```
+
+# Update State
+To update our state, we use our state updater function.
+
+We should never directly update state. Ex: color = "red" is not allowed.
+
+Example:
+Use a button to update the state:
+```html
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("red");
+
+  return (
+    <>
+      <h1>My favorite color is {color}!</h1>
+      <button
+        type="button"
+        onClick={() => setColor("blue")}
+      >Blue</button>
+    </>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<FavoriteColor />);
+
+Example:
+Create a single Hook that holds an object:
+
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function Car() {
+  const [car, setCar] = useState({
+    brand: "Ford",
+    model: "Mustang",
+    year: "1964",
+    color: "red"
+  });
+
+  return (
+    <>
+      <h1>My {car.brand}</h1>
+      <p>
+        It is a {car.color} {car.model} from {car.year}.
+      </p>
+    </>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car />);
+```
+
+Updating Objects and Arrays in State
+When state is updated, the entire state gets overwritten.
+
+What if we only want to update the color of our car?
+
+If we only called setCar({color: "blue"}), this would remove the brand, model, and year from our state.
+
+We can use the JavaScript spread operator to help us.
+
+Example:
+Use the JavaScript spread operator to update only the color of the car:
+
+```html
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function Car() {
+  const [car, setCar] = useState({
+    brand: "Ford",
+    model: "Mustang",
+    year: "1964",
+    color: "red"
+  });
+
+  const updateColor = () => {
+    setCar(previousState => {
+      return { ...previousState, color: "blue" }
+    });
+  }
+
+  return (
+    <>
+      <h1>My {car.brand}</h1>
+      <p>
+        It is a {car.color} {car.model} from {car.year}.
+      </p>
+      <button
+        type="button"
+        onClick={updateColor}
+      >Blue</button>
+    </>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car />);
+```
+# React useEffect Hooks
+
+The useEffect Hook allows you to perform side effects in your components.
+
+Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+
+useEffect accepts two arguments. The second argument is optional.
+
+useEffect(<function>, <dependency>)
+
+Let's use a timer as an example.
+
+Example:Get your own React.js Server
+Use setTimeout() to count 1 second after initial render:
+```html
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
+
+function Timer() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+  });
+
+  return <h1>I've rendered {count} times!</h1>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Timer />);
+```
+But wait!! It keeps counting even though it should only count once!
+
+useEffect runs on every render. That means that when the count changes, a render happens, which then triggers another effect.
+
+This is not what we want. There are several ways to control when side effects run.
+
+We should always include the second parameter which accepts an array. We can optionally pass dependencies to useEffect in this array.
+
+Example
+1. No dependency passed:
+
+useEffect(() => {
+  //Runs on every render
+});
+Example
+2. An empty array:
+
+useEffect(() => {
+  //Runs only on the first render
+}, []);
+Example
+3. Props or state values:
+
+useEffect(() => {
+  //Runs on the first render
+  //And any time any dependency value changes
+}, [prop, state]);
+So, to fix this issue, let's only run this effect on the initial render.
+
+Example:
+Only run the effect on the initial render:
+```html
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
+
+function Timer() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+  }, []); // <- add empty brackets here
+
+  return <h1>I've rendered {count} times!</h1>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Timer />);
+```
+Example:
+Here is an example of a useEffect Hook that is dependent on a variable. If the count variable updates, the effect will run again:
+```html
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  const [calculation, setCalculation] = useState(0);
+
+  useEffect(() => {
+    setCalculation(() => count * 2);
+  }, [count]); // <- add the count variable here
+
+  return (
+    <>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount((c) => c + 1)}>+</button>
+      <p>Calculation: {calculation}</p>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Counter />);
+```
+If there are multiple dependencies, they should be included in the useEffect dependency array.
+
+Effect Cleanup
+Some effects require cleanup to reduce memory leaks.
+
+Timeouts, subscriptions, event listeners, and other effects that are no longer needed should be disposed.
+
+We do this by including a return function at the end of the useEffect Hook.
+
+Example:
+Clean up the timer at the end of the useEffect Hook:
+```html
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
+
+function Timer() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let timer = setTimeout(() => {
+    setCount((count) => count + 1);
+  }, 1000);
+
+  return () => clearTimeout(timer)
+  }, []);
+
+  return <h1>I've rendered {count} times!</h1>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Timer />);
+```
+Note: To clear the timer, we had to name it.
+
+Test Yourself With Exercises
+Exercise:
+What do you need to add to the second argument of a useEffect Hook to limit it to running only on the first render?
+```html
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
+
+function App() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setData(getData())
+  }, 
+);
+
+  return <DisplayData data={data} />;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+```
+# make HTTP get Call In React 
+```html
+import { useState,React,useEffect } from "react"
+import axios from "axios";
+import Card from 'react-bootstrap/Card';
+const baseURL = "https://jsonplaceholder.typicode.com/posts";
+
+function Dashboard() {
+    /*
+        To perform this request when the component mounts, you use the useEffect hook. This involves importing Axios, using the .get() method to make a GET request to your endpoint, and using a .then() callback to get back all of the response data.
+        The response is returned as an object. The data (which is in this case a post with id, title, and body properties) is put in a piece of state called post which is displayed in the component.
+    */
+    const [post, setPost] = useState(null);
+
+    useEffect(() => {
+      axios.get(baseURL).then((response) => {
+        setPost(response.data);
+      });
+    }, []);
+  
+    if (!post) return null;
+
+    const postList= post.map((eachPost)=>
+        <Card>
+            <Card.Body>
+                <Card.Title>{eachPost.id} : {eachPost.title}</Card.Title>
+                <Card.Text>
+                    {eachPost.body}
+                </Card.Text>
+            </Card.Body>
+        </Card>
+    )
+
+    return (
+        <>
+           <div className="container-fluid">
+                <h1> Dashboard </h1>
+                <div>
+                    {postList}
+                </div>
+            </div>
+        </>
+    )
+}
+export default  Dashboard
+```
 
 
 
