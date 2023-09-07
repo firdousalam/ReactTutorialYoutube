@@ -923,7 +923,7 @@ function App() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 ```
-#making HTTP Calls In React 
+# make HTTP get Call In React 
 ```html
 import { useState,React,useEffect } from "react"
 import axios from "axios";
