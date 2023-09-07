@@ -93,6 +93,18 @@ version 18
 React component is the primary building block of the React application. It uses React elements and JSX to design its user interface. 
 React component is basically a JavaScript class or pure JavaScript function
 
+Example 
+```html
+export default function App(){
+  return (
+    <> 
+      <div> Hello World
+    </>
+  )
+}
+
+```
+
 # what is JSX
 
 JSX stands for JavaScript XML.
@@ -355,6 +367,7 @@ import message from "./message.js";
 
 The ternary operator is a simplified conditional operator like if / else.
 Syntax: 
+```html
 condition ? <expression if true> : <expression if false>
 Here is an example using if / else:
 Before:
@@ -365,9 +378,10 @@ if (authenticated) {
 }
 With Ternary 
 authenticated ? renderApp() : renderLogin();
+```
 
 # JSX
-
+```html
 let x = "hello"
 <>
        
@@ -380,13 +394,15 @@ this will compile to
     <html>
         <body> hello</body>
     </html>
+```
+
 # React Router
 
 React Router enables "client side routing".
 
 ### example of Routing In React
 Client side routing is enabled by creating a Router and linking/submitting to pages with Link and <Form>:
-
+```html
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import {
@@ -415,7 +431,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
 );
-
+```
 # createBrowserRouter
 This is the recommended router for all React Router web projects. It uses the DOM History API to update the URL and manage the history stack.
 
@@ -469,7 +485,7 @@ import { Button } from 'react-bootstrap';
 
 # Browser globals
 We provide react-bootstrap.js and react-bootstrap.min.js bundles with all components exported on the window.ReactBootstrap object. These bundles are available on jsDelivr, as well as in the npm package.
-
+```html
 <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" crossorigin></script>
 
 <script
@@ -502,14 +518,17 @@ function Example() {
 }
 
 export default Example;
-
+```
 # Important Step to follow when we copy Generic HTML into React JSX
 
 1. class should change to className
 2. href="#" should change to href="/"
-3. all tag should be closed tag for example "<HR><BR>"  should be write like <BR/>and <HR/> respectively
-and many more
-'<input type="" >' input type should have cloas tage  <input type"" />
+3. all tag should be closed tag for example 
+```html
+<input type="" > should have cloas tage  <input type"" />
+<br> should be like <br />
+<hr> should be <hr/>
+```
 
 # why JSX used className for CSS class
 to remove comflict between Javascript class and HTML Css class
