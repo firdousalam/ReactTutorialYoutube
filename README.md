@@ -153,6 +153,10 @@ Node js version 14+ should be installed in our machine
 
 npx create-react-app <App Name>  // <App Name> us the Name of your Application
 
+### to create react app on same folder
+
+npx create-react-app .
+
 # What Knowledge we need to Learn React
 
 1. HTML and CSS
