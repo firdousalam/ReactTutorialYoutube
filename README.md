@@ -1114,9 +1114,9 @@ function Dashboard() {
 export default  Dashboard
 ```
 
-# HTTP Post REQUEST Example 
+# HTTP Post Code REQUEST Example Using Axios and Setting Headers
 
-``` html
+```html
 
 import React, { useState } from "react";
 import axios from "axios";
