@@ -94,11 +94,16 @@ version 18
 
 ### 2. Have General Development Skill
 You Should Have Knowledge of ##GIT
+
 You Should Know How to Use ##CommandLine(CLI)
+
 You Should Know How to Create Projects and It Structure
+
 Know HTTP(S) protocol you should at least be familiar with common HTTP request methods like the GET, POST, PUT, PATCH, DELETE, OPTIONS, and how HTTP/HTTPS works in general.
+
 Algorithms and Data Structure
 Well, this is again one of the general programming skill which is not necessarily needed for becoming a React developer but absolutely needed to become a programmer in the first place.
+
 Learn Design Patterns
 
 ### 3. Understand What React Is
