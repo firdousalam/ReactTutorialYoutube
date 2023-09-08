@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-//import axios from "axios";
-//import ReactDOM from "react-dom";
+import axios from "axios";
+
 import "./LoginSignup.css"
 function LoginSignup() {
     // React States
@@ -55,12 +55,12 @@ function LoginSignup() {
         // Username not found
         setErrorMessages({ name: "uname", message: errors.uname });
       }
-    /*
+    
     const config = {     
         headers: { 'content-type': 'multipart/form-data' }
     }
     
-     let url = "vvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
+     let url = "HTTP URL For POST Call"
     axios.post(url, data, config)
         .then(response => {
             console.log(response);
@@ -68,10 +68,6 @@ function LoginSignup() {
         .catch(error => {
             console.log(error);
     });
-
-    */
-
-
 
     };
     const changeHandler = (e) => {
