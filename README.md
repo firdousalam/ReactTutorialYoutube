@@ -87,6 +87,109 @@ it is maintained by Facebook and open source Community
 
 version 18
 
+# The 2023 React Developer Roadmap 
+
+### 1.  Knowledge of HTML + CSS + Javascript (
+  You should have mid to high level knowledge of HTML +CSS + Javascript including ECMA 6)
+
+### 2. Have General Development Skill
+You Should Have Knowledge of ##GIT
+You Should Know How to Use ##CommandLine(CLI)
+You Should Know How to Create Projects and It Structure
+Know HTTP(S) protocol you should at least be familiar with common HTTP request methods like the GET, POST, PUT, PATCH, DELETE, OPTIONS, and how HTTP/HTTPS works in general.
+Algorithms and Data Structure
+Well, this is again one of the general programming skill which is not necessarily needed for becoming a React developer but absolutely needed to become a programmer in the first place.
+Learn Design Patterns
+
+### 3. Understand What React Is
+You should understand what is so special about ReactJs. It is a declarative, component-based user interface library.
+
+### 4. Learn How to Set Up your Development Environment
+There are multiple ways to set up a development environment for ReactJs. Minimally, you can point to the CDN distribution from your script file.
+
+### 5. Components
+how To Create / pass value / import / reuse Component
+
+### 6. jsx
+how to write Code In JSX i.e where to define HTML where to define Js Code
+
+
+
+### 7. State in React
+State is the data private to your component. We do not share states across components. The "state" of your component that you use to render information and modify information.
+
+### 8.  Props in React
+In real-world programming, you will need the components to interact with each other. States are private to a component, but you need to pass the data between components. 
+
+### 9.  Lists and Keys in React
+We use list to render a list of items in a React component. It is a very common task to list users, TODO items, and other things. We use the map() function to iterate over the list and render the results.
+
+keys help identify what item from the list has changed to inform React to re-render. ReactJS gives a warning if you forget to mention the keys for a list.
+
+### 10.  Life Cycle Methods in React
+We discussed that the "state" is a component's private matter. State can be dynamic and might need modifications. We also need to perform resource cleanups when components are destroyed. ReactJs provides various life-cycle methods to detect the phases and take action.
+
+If you are just getting started with ReactJS, you should understand life cycle management for functional components. You can do this using the in-built hooks like useState, useEffect, and so on.
+
+### 11. Styling in React
+We all want our applications to look fresh and aesthetically pleasing. You can use plain old CSS to style your ReactJS app. Or you can use Sass or other CSS-driven component libraries like TailwindCSS, ChakraUI, react-bootstrap, or MUI. The choice is entirely yours.
+
+### 12. Form Handling in React
+Handling forms is an essential requirement in web applications. You need to understand how to handle form elements in the ReactJS way.
+
+### 13. Routing in React
+Routing is required for multi-page applications. It is also helpful to bookmark a particular page or traverse back-and-forth in the application using the browser's back button.
+
+React Router is the most popular routing solution that helps with declarative routing.
+
+### 14.  Data Handling in React
+This is a crucial part of application development. You need to learn how to use the fetch API or libraries like node-fetch and axios to interact with APIs and handle data in your component.
+
+### 15.  Reconciliation Process in React
+ReactJS uses the Virtual DOM and diffing algorithm to decide when and what to update in the actual DOM for the rendering. Knowing how it works under the hood will help you with debugging.
+
+### 16.  React Hooks
+You hopefully learned a bit about some in-built hooks like useState useEffect when you learn about the life-cycle. There are other useful built-in hooks you need to learn with use-cases. Make sure you don't ignore them.
+
+### 17. Custom React Hooks
+Custom hooks helps in reusability. You must look for opportunities to extract out component logic to reusable hooks. The code becomes clean and modular with the usage of custom hooks.
+
+### 18. Context in React
+In React applications, we pass data from parent to child components. It is one-directional and top-down. If too many components are deep down, the data (props) must pass through many components.
+
+Also, if you need to share some values between components that are not part of a hierarchy, you need a mechanism. That's when you can make use of the Context.
+
+### 19. Lazy Loading in React
+ReactJS supports code splitting. It is a way to lazy load what you need by the current user. It also avoids producing a large build bundle. The dynamic import feature is the best way to include code-splitting in a React app.
+
+### 20. Portals in React
+You may have to use Portals when dealing with modals, dialogs, or tooltips with better event handling. It is supported out-of-the-box in ReactJS.
+
+### 21. State Management in React
+In a larger application, you must share information between components. At times, the default support of Props and Context may not suffice.
+
+In these cases, you may need a state management solution like Redux or MobX in these cases. But again, you can decide whether (or not) you'll need them.
+
+### 22. Theming in React
+Theming is a modern feature in web apps. We should give users the choice of what theme they want – like light or dark – to use to help them feel comfortable when using your site or app.
+
+You can even create your custom themes in some applications and apply them. There are several ways you can theme a React app. Select the one that matches the best with your application's CSS stack.
+
+### 23. Patterns in React
+There are various patterns you can use as solutions to common problems in React. Over time, ReactJS developers have found patterns they could use to help them stop reinventing the wheel.
+
+### 24. nti-Patterns in React
+Anti-Patterns are the practices that you should avoid using in the ReactJS applications. You should learn them along with the helpful patterns you should use.
+
+Just keep in mind that learning advanced React concepts doesn't stop here. You can continue to learn about accessibility, test frameworks, and many more advanced concepts as needed.
+
+# Popular Framework Build Using React
+
+1. Next.js
+2. GatsbyJS
+3. Remix
+
+
  # What is component in React?
 
 
