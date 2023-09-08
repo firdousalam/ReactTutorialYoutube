@@ -89,8 +89,8 @@ version 18
 
 # The 2023 React Developer Roadmap 
 
-### 1.  Knowledge of HTML + CSS + Javascript (
-  You should have mid to high level knowledge of HTML +CSS + Javascript including ECMA 6)
+### 1.  Knowledge of HTML + CSS + Javascript 
+  You should have mid to high level knowledge of HTML +CSS + Javascript ( including ECMA 6)
 
 ### 2. Have General Development Skill
 You Should Have Knowledge of ##GIT
