@@ -201,11 +201,43 @@ Example
 export default function App(){
   return (
     <> 
-      <div> Hello World
+      <div> Hello World </div>
     </>
   )
 }
 
+or You Can Write Like this Way
+
+function App(){
+  return (
+    <> 
+      <div> Hello World </div>
+    </>
+  )
+}
+export default App
+
+
+================================================
+/*
+You Can Write Your Javascrip code Here but it cannot access JSX DOM
+
+*/
+
+function App(){
+  /*
+    You Can Write JS Code which can access HTML of Components
+  */
+  return (
+    <> 
+      /*
+        All Your HTML Code Should be written Here
+      */
+    </>
+  )
+}
+export default App
+===================================================
 ```
 
 # what is JSX
