@@ -10,7 +10,7 @@ const Registration = ()=>{
     const [userData, setUserData] = useState({
       "emailId": '',
       "password": '',
-      "firstName": 'Firdous',
+      "firstName": ' Alam',
       "lastName": '',
       "mobile": '',
       "city" : '',
@@ -98,6 +98,11 @@ const Registration = ()=>{
         let name = e.target.name;
 
 
+        //////////////////////
+       
+
+
+        ///////////////////////
 
         setUserData(current =>{
           //const cloneData = {...current}
