@@ -1,7 +1,8 @@
 import { useState } from "react";
 function Login(){
-    //let x ="my name";
+    //let userId ="my name";
     const [userId,setuserId] = useState("my name");
+   // let password = "";
     const [password,setPassword] = useState("")
 
    
@@ -16,6 +17,11 @@ function Login(){
         console.log(formName);
         if(formName === 'userid'){
             setuserId(currentValue);
+
+            setuserId((prev)=>{
+                //previousValue it will contain current value before update
+                return currentValue
+            })
         }
         if(formName === 'password'){
             setPassword(currentValue);
