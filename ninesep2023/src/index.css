@@ -8,3 +8,7 @@
 .margintop10{
   margin-top: 10px !important;
 }
+.borderForm {
+  border: 2px cornflowerblue;
+  border-radius: 10%;
+}

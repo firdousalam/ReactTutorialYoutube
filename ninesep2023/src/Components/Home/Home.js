@@ -7,6 +7,29 @@ import { useState , useEffect} from 'react';
     const [userData, setUserData] = useState(null);
     
     let data = " This is From Jsx"
+
+    //new write else it will go on infinite loog
+    useEffect(()=>{
+      // all the Logic http 
+   })
+
+
+    useEffect(function(){
+
+    },[])
+    // it will run only once similar ot Constructor or NGInit of Angular or Onload
+    useEffect(()=>{
+       // all the Logic
+       return // logic when we get out from this components
+    },[]) 
+
+    // it will fire On Load and On Change of The given userData Variable/state
+    useEffect(()=>{
+      // all the Logic
+   },[userData]) // [stateProperty name]
+
+
+
     useEffect(()=>{
       axios.get(url.getDemoUrl, {
       })
