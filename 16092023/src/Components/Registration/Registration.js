@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { useState } from "react";
 import constantErrorMessage from "../../Model/ErrorMessage";
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 const baseURL = "https://jsonplaceholder.typicode.com/posts";
 const Registration = ()=>{
   // created a UseState Hook to Store FormData
@@ -36,6 +37,8 @@ const Registration = ()=>{
         "file" : '',
         "country" : ''
       });
+      const navigate = useNavigate();
+
       let errors = constantErrorMessage.userError;
       const loginUser = (e)=>{
         e.preventDefault();
@@ -94,7 +97,8 @@ const Registration = ()=>{
           return  
         }
         axios.post(baseURL,userData).then((response) => {
-           alert("success")
+           alert("success");
+           navigate('/userlist');
         }).catch( (error) => {
             console.log(error);
         })

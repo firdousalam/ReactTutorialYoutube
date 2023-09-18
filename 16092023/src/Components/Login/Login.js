@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 const baseURL = "https://jsonplaceholder.typicode.com/posts";
 
 
@@ -13,7 +14,8 @@ const Login=() =>{
      //let userId ="my name";
      const [userId,setuserId] = useState("");
      // let password = "";
-      const [password,setPassword] = useState("")
+      const [password,setPassword] = useState("");
+      const navigate = useNavigate();
   
       const changeText =(e)=>{
           let currentValue = e.target.value;
@@ -44,7 +46,8 @@ const Login=() =>{
             "userId" : userId,
             "password" : password
           }).then((response) => {
-            alert("success")
+            alert("success");
+            navigate('/');
          }).catch( (error) => {
              console.log(error);
          })
