@@ -47,10 +47,7 @@ const Login=() =>{
             "password" : password
           }).then((response) => {
             alert("success");
-            localStorage.setItem("auth" , true);
-            localStorage.setItem("data" , response.data);
-
-            navigate('/dashboard');
+            navigate('/');
          }).catch( (error) => {
              console.log(error);
          })
