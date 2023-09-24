@@ -2,7 +2,8 @@ import axios from "axios";
 import { useState,React,useEffect } from "react";
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
-const baseURL = "https://jsonplaceholder.typicode.com/posts";
+import constant from "../../Utils/Constant"
+const baseURL = constant.bsaeAPIUrl+"region/getTestData";
 
 function Dashboard(){
 
